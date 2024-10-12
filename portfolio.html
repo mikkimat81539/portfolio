@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-ick-uh-eL-uh</title>
+    <link rel = "stylesheet" href="potfolio.css">
+    <script src = 'https://unpkg.com/wavesurfer.js'></script>
+</head>
+
+<body>
+    <header>
+        <div class="blockbuster">
+            <div class="music">
+                <p>Artist: M-ick-uh-eL-uh</p>
+                <h2>STAAAATIC</h2>
+
+                <div class="track">
+                    <img src="https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/play.png?v=1686810791925" id = "playbtn" width="50px" height="50px">
+                    <div id = "waveform"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="contain">
+        <div class="container">
+            <div class="box">
+                <img src="https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/Logo4.png?v=1686810787188" alt="logo" width="75%" height="75%">
+            </div>
+            <div class="socials">
+                <div class="soundcloud"><a href="https://soundcloud.com/m-ick-uh-el-uh-943203359" target="_blank">
+                    <img src="https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/soundcloud.png?v=1686810797657" alt="soundcloud" width="50px" height="50px"></a>
+                </div>
+
+                <div class="instagram">
+                    <a href="https://www.instagram.com/mikkimat81539/" target="_blank">
+                        <img src="https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/instagram.png?v=1686810784759" alt="instagram"  width="50px" height="50px">
+                    </a>
+                </div>
+
+                <div class="gmail">
+                    <a href="mailto:mikkimat5412@gmail.com" target="_blank">
+                      <img src="https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/gmail.png?v=1686810782345" alt="email"  width="50px" height="50px">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>  
+        var playbtn = document.getElementById("playbtn");
+
+        var wavesurfer = WaveSurfer.create
+        ({
+          container: '#waveform',
+          waveColor: '#4F4A85',
+          progressColor: '#eb34eb',
+          url: '/audio.mp3',
+          barWidth: 4,
+          responsive: true,
+          height: 60,
+          barRadius: 4
+        })
+        
+        wavesurfer.load('https://cdn.glitch.me/c41f67a1-9611-418a-850a-cce271ca6a1b/STAAAATIC.wav?v=1686810801207');
+
+        playbtn.onclick = function()
+        {
+            wavesurfer.playPause();
+            if(playbtn.src.includes("https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/play.png?v=1686810791925")){
+                playbtn.src = "https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/pause.png?v=1686810789458";
+            }
+
+            else{
+                playbtn.src = "https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/play.png?v=1686810791925"; 
+            }
+        }
+
+        wavesurfer.on('finish', function(){
+            playbtn.src = "https://cdn.glitch.global/c41f67a1-9611-418a-850a-cce271ca6a1b/play.png?v=1686810791925";
+            wavesurfer.stop()
+        })
+    </script>
+</body>
+</html>

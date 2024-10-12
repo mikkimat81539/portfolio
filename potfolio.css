@@ -1,0 +1,91 @@
+*
+{
+    margin: 0;
+}
+
+html
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+header
+{
+    height: 10%;
+}
+
+.blockbuster
+{
+    display: flex;
+    justify-content: center;
+}
+
+.music
+{
+    margin-top: 5px;
+    width: 42%;
+    padding: 20px;
+    background: white;
+    color: #555;
+    border-radius: 8px;
+}
+
+.track img
+{
+    cursor: pointer;
+}
+
+.track div
+{
+    flex: 1;
+}
+
+body
+{
+    background-color: black;
+}
+
+.contain
+{
+    display: flex;
+    justify-content: center;
+}
+
+.container
+{
+    width: 60%;
+    height: 60%;
+}
+
+.box
+{
+    display: flex;
+    justify-content: center;
+}
+
+.socials
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.soundcloud:hover
+{
+    z-index: 1;
+    transform: scale(1.10);
+}
+
+.instagram:hover
+{
+    z-index: 1;
+    transform: scale(1.10);
+}
+
+.gmail:hover
+{
+    z-index: 1;
+    transform: scale(1.10);
+}
